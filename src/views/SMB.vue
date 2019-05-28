@@ -5,7 +5,7 @@
     <InputField label="Input tekst" />
     <InputField label="Input tekst" />
     <InputField label="Input tekst" />
-    <InputField label="Input tekst" />
+    <InputField label="Input lana" />
   </div>
 </template>
 

@@ -1,0 +1,13 @@
+@import '~vue-material/dist/vue-material.min.css';
+@import '~vue-material/dist/theme/default.css';
+@import "~vue-material/dist/theme/engine"; // Import the theme engine
+
+@include md-register-theme(
+  "default",
+  (
+    primary: md-get-palette-color(teal, 900),
+    accent: md-get-palette-color(pink, 100),
+    theme: light
+  )
+);
+@import "~vue-material/dist/theme/all";

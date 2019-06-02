@@ -6,3 +6,7 @@ export function generateUUID() {
     ).toString(16)
   );
 }
+
+export function toLocaleString(value) {
+  return value ? value.toLocaleString("no-NB") : 0;
+}

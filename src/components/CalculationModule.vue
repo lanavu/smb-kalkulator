@@ -12,6 +12,10 @@
       <span>Samlet gjeld på boligen</span>
       <span>{{ toLocaleString(userInput.propertyDept) }} kr</span>
     </p>
+    <p class="info-row">
+      <span>Differanse</span>
+      <span>{{ toLocaleString(diff) }} kr</span>
+    </p>
   </div>
 </template>
 
@@ -23,7 +27,11 @@ export default {
   computed: {
     ...mapState({
       userInput: state => state.userInput
-    })
+    }),
+    // New computed here
+    diff() {
+      return this.userInput.propertyValue - this.userInput.propertyDept;
+    }
   },
   methods: {
     toLocaleString

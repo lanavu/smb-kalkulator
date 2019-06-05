@@ -16,6 +16,10 @@
       <span>Differanse</span>
       <span>{{ toLocaleString(diff) }} kr</span>
     </p>
+    <p class="info-row">
+      <span>Din eierandel</span>
+      <span>{{ toLocaleString(shareValue) }} kr</span>
+    </p>
   </div>
 </template>
 
@@ -31,6 +35,10 @@ export default {
     // New computed here
     diff() {
       return this.userInput.propertyValue - this.userInput.propertyDept;
+    },
+    shareValue() {
+      const multiplier = this.userInput.ownershipShare / 100;
+      return this.userInput.propertyValue * multiplier;
     }
   },
   methods: {

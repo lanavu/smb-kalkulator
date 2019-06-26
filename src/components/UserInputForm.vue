@@ -12,6 +12,17 @@
       <span class="md-suffix">kr</span>
     </md-field>
     <md-field>
+      <label for="fellesgjeld">Andel fellesgjeld</label>
+      <md-input
+        type="number"
+        id="fellesgjeld"
+        name="fellesgjeld"
+        min="0"
+        @input="value => handleNumberInput('commonDebt', value)"
+      />
+      <span class="md-suffix">kr</span>
+    </md-field>
+    <md-field>
       <label for="ownership-share">Din eierandel</label>
       <md-input
         type="number"
@@ -31,6 +42,30 @@
         name="property-dept"
         min="0"
         @input="value => handleNumberInput('propertyDept', value)"
+      />
+      <span class="md-suffix">kr</span>
+    </md-field>
+    <md-field>
+      <label for="own-property-dept"
+        >Hvor mye boliggjeld er du ansvarlig for</label
+      >
+      <md-input
+        type="number"
+        id="own-property-dept"
+        name="own-property-dept"
+        min="0"
+        @input="value => handleNumberInput('ownPropertyDept', value)"
+      />
+      <span class="md-suffix">kr</span>
+    </md-field>
+    <md-field>
+      <label for="purchase-amount">Avtalt kjøpesum for boligen</label>
+      <md-input
+        type="number"
+        id="purchase-amount"
+        name="purchase-amount"
+        min="0"
+        @input="value => handleNumberInput('purchase-amount', value)"
       />
       <span class="md-suffix">kr</span>
     </md-field>

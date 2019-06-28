@@ -1,5 +1,5 @@
 <template>
-  <div class="SMB">
+  <div class="buyout">
     <div class="md-layout md-gutter md-alignment-center-center">
       <div class="md-layout-item md-size-80 md-small-size-100">
         <h1 class="md-display-2 light-type">Kjøp ut andre</h1>
@@ -20,7 +20,7 @@ import { mapState } from "vuex";
 import UserInputForm from "@/components/UserInputForm";
 import CalculationModule from "@/components/CalculationModule";
 export default {
-  name: "SMB",
+  name: "Buyout",
   components: {
     UserInputForm,
     CalculationModule
@@ -36,7 +36,7 @@ export default {
 <style lang="scss" scoped>
 @import "~vue-material/dist/theme/engine";
 
-.SMB {
+.buyout {
   width: 100%;
   max-width: 1280px;
 }

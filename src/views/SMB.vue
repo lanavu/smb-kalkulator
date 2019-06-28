@@ -1,9 +1,11 @@
 <template>
   <div class="SMB">
     <div class="md-layout md-gutter md-alignment-center-center">
-      <div class="user-input md-layout-item md-size-40 md-small-size-100">
+      <div class="md-layout-item md-size-80 md-small-size-100">
         <h1 class="md-display-2 light-type">Kjøp ut andre</h1>
         <p>Regn ut hvor mye du må betale for å kjøpe ut andre eiere</p>
+      </div>
+      <div class="user-input md-layout-item md-size-40 md-small-size-100">
         <UserInputForm />
       </div>
       <div class="result md-layout-item md-size-40 md-small-size-100">

@@ -10,7 +10,7 @@
     </p>
     <p class="info-row">
       <span>Egenkapital i boligen</span>
-      <span>{{ toLocaleString(userInput.propertyDept) }} kr</span>
+      <span>{{ toLocaleString(userInput.totalEquity) }} kr</span>
     </p>
     <p class="info-row">
       <span>Din eierandel av boligen</span>
@@ -18,7 +18,7 @@
     </p>
     <p class="info-row">
       <span>Utkjøpssum</span>
-      <span>{{ toLocaleString(purchaseSum) }} kr</span>
+      <span>{{ toLocaleString(purchaseAmount) }} kr</span>
     </p>
   </div>
 </template>
@@ -44,10 +44,6 @@ export default {
       const netPropertyValue =
         this.userInput.propertyValue - this.userInput.commonDebt;
       return netPropertyValue;
-    },
-    purchaseSum() {
-      const purchaseSum = this.diff - this.shareValue;
-      return purchaseSum;
     }
   },
   methods: {

@@ -34,4 +34,5 @@
 @import "styles/colors";
 @import "styles/base";
 @import "styles/input";
+@import "styles/calculationModule";
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="buyout">
+  <div class="buyout content">
     <div class="md-layout md-gutter md-alignment-top-center">
       <div class="md-layout-item md-size-80 md-small-size-100">
         <h1 class="md-headline light-type">Kjøp ut andre eiere</h1>
@@ -36,14 +36,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "~vue-material/dist/theme/engine";
-
-.buyout {
-  width: 100%;
-  max-width: 1280px;
-}
-.result {
-  background: md-get-palette-color(bluegrey, 50);
-}
-</style>
+<style></style>

@@ -41,7 +41,7 @@ export default {
     shareValue() {
       const multiplier = this.userInput.ownershipShare / 100;
       return (
-        this.netPropertyValue * multiplier - this.userInput.ownPropertyDept
+        this.netPropertyValue * multiplier - this.userInput.ownPropertyDebt
       );
     },
     netPropertyValue() {
@@ -50,16 +50,16 @@ export default {
       return netPropertyValue;
     },
     totalEquity() {
-      return this.netPropertyValue - this.userInput.propertyDept;
+      return this.netPropertyValue - this.userInput.propertyDebt;
     },
     purchaseAmount() {
       const shareMultiplier = this.userInput.ownershipShare / 100;
-      const partnerDept =
-        this.userInput.propertyDept - this.userInput.ownPropertyDept;
-      return this.netPropertyValue * (1 - shareMultiplier) - partnerDept;
+      const partnerDebt =
+        this.userInput.propertyDebt - this.userInput.ownPropertyDebt;
+      return this.netPropertyValue * (1 - shareMultiplier) - partnerDebt;
     },
     newLoanAmount() {
-      return this.userInput.propertyDept + this.purchaseAmount;
+      return this.userInput.propertyDebt + this.purchaseAmount;
     }
   },
   methods: {

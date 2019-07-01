@@ -1,12 +1,13 @@
 <template>
   <div class="user-input-form">
     <md-field>
-      <label for="estimated-value">Boligens verdi uten fellesgjeld</label>
+      <label for="estimated-value">Boligens totalverdi</label>
       <md-input
         type="number"
         id="estimated-value"
         name="estimated-value"
         min="0"
+        :value="userInput.propertyValue"
         @input="value => handleNumberInput('propertyValue', value)"
       />
       <span class="md-suffix">kr</span>
@@ -18,6 +19,7 @@
         id="fellesgjeld"
         name="fellesgjeld"
         min="0"
+        :value="userInput.commonDebt"
         @input="value => handleNumberInput('commonDebt', value)"
       />
       <span class="md-suffix">kr</span>
@@ -30,6 +32,7 @@
         name="ownership-share"
         min="0"
         max="100"
+        :value="userInput.ownershipShare"
         @input="value => handleNumberInput('ownershipShare', value)"
       />
       <span class="md-suffix">%</span>
@@ -41,20 +44,20 @@
         id="property-dept"
         name="property-dept"
         min="0"
-        @input="value => handleNumberInput('propertyDept', value)"
+        :value="userInput.propertyDebt"
+        @input="value => handleNumberInput('propertyDebt', value)"
       />
       <span class="md-suffix">kr</span>
     </md-field>
     <md-field>
-      <label for="own-property-dept"
-        >Hvor mye boliggjeld er du ansvarlig for</label
-      >
+      <label for="own-property-dept">Boliggjeld er du ansvarlig for</label>
       <md-input
         type="number"
         id="own-property-dept"
         name="own-property-dept"
         min="0"
-        @input="value => handleNumberInput('ownPropertyDept', value)"
+        :value="userInput.proptyDebt"
+        @input="value => handleNumberInput('ownPropertyDebt', value)"
       />
       <span class="md-suffix">kr</span>
     </md-field>
@@ -62,9 +65,14 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations, mapState } from "vuex";
 export default {
   name: "UserInputForm",
+  computed: {
+    ...mapState({
+      userInput: state => state.userInputBuyout
+    })
+  },
   methods: {
     ...mapMutations({ setUserInput: "SET_USER_INPUT" }),
 

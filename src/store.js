@@ -8,9 +8,9 @@ export default new Vuex.Store({
     userInputBuyout: {
       propertyValue: null,
       ownershipShare: null,
-      propertyDept: null,
+      propertyDebt: null,
       commonDebt: null,
-      ownPropertyDept: null
+      ownPropertyDebt: null
     },
     userInputBuyShare: {
       propertyValue: null,

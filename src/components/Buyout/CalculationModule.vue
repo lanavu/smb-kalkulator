@@ -36,7 +36,7 @@ export default {
   name: "CalculationModule",
   computed: {
     ...mapState({
-      userInput: state => state.userInput
+      userInput: state => state.userInputBuyout
     }),
     shareValue() {
       const multiplier = this.userInput.ownershipShare / 100;

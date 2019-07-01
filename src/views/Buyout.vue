@@ -20,8 +20,8 @@
 
 <script>
 import { mapState } from "vuex";
-import UserInputForm from "@/components/UserInputForm";
-import CalculationModule from "@/components/CalculationModule";
+import UserInputForm from "@/components/Buyout/UserInputForm";
+import CalculationModule from "@/components/Buyout/CalculationModule";
 export default {
   name: "Buyout",
   components: {

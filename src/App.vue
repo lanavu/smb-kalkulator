@@ -69,7 +69,7 @@ input[type="number"] {
 
 .router-link-exact-active {
   & > button {
-    background-color: md-get-palette-color(teal, 400) !important;
+    background-color: md-get-palette-color(pink, 200) !important;
   }
 }
 </style>

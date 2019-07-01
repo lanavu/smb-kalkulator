@@ -5,8 +5,8 @@
 @include md-register-theme(
   "default",
   (
-    primary: md-get-palette-color(teal, 900),
-    accent: md-get-palette-color(pink, 100),
+    primary: md-get-palette-color(pink, 700),
+    accent: md-get-palette-color(teal, 100),
     theme: light
   )
 );

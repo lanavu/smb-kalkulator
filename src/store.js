@@ -8,7 +8,8 @@ export default new Vuex.Store({
     userInput: {
       propertyValue: null,
       ownershipShare: null,
-      propertyDept: null
+      propertyDept: null,
+      commonDebt: null
     }
   },
   mutations: {

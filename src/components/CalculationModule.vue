@@ -5,16 +5,20 @@
       <span>{{ toLocaleString(userInput.propertyValue) }} kr</span>
     </p>
     <p class="info-row">
-      <span>Du eier</span>
-      <span>{{ toLocaleString(userInput.ownershipShare) }}%</span>
+      <span>Netto boligverdi</span>
+      <span>{{ toLocaleString(netPropertyValue) }} kr</span>
     </p>
     <p class="info-row">
-      <span>Samlet gjeld på boligen</span>
-      <span>{{ toLocaleString(userInput.propertyDept) }} kr</span>
+      <span>Egenkapital i boligen</span>
+      <span>{{ toLocaleString(userInput.totalEquity) }} kr</span>
     </p>
     <p class="info-row">
-      <span>Differanse</span>
-      <span>{{ toLocaleString(diff) }} kr</span>
+      <span>Din eierandel av boligen</span>
+      <span>{{ toLocaleString(shareValue) }} kr</span>
+    </p>
+    <p class="info-row">
+      <span>Utkjøpssum</span>
+      <span>{{ toLocaleString(purchaseAmount) }} kr</span>
     </p>
   </div>
 </template>
@@ -31,6 +35,15 @@ export default {
     // New computed here
     diff() {
       return this.userInput.propertyValue - this.userInput.propertyDept;
+    },
+    shareValue() {
+      const multiplier = this.userInput.ownershipShare / 100;
+      return this.netPropertyValue * multiplier;
+    },
+    netPropertyValue() {
+      const netPropertyValue =
+        this.userInput.propertyValue - this.userInput.commonDebt;
+      return netPropertyValue;
     }
   },
   methods: {

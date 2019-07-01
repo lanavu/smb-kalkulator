@@ -68,21 +68,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.input-info {
-  padding: 5px 10px;
-
-  .info-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.2em;
-    border-bottom: 1px solid lightgrey;
-    padding: 20px 0;
-    margin: 0;
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-}
-</style>
+<style></style>

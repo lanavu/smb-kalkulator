@@ -56,7 +56,7 @@
         id="own-property-dept"
         name="own-property-dept"
         min="0"
-        :value="userInput.proptyDebt"
+        :value="userInput.ownPropertyDebt"
         @input="value => handleNumberInput('ownPropertyDebt', value)"
       />
       <span class="md-suffix">kr</span>

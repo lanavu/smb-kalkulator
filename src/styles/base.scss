@@ -1,0 +1,28 @@
+body {
+    @media (max-width: $screen-xs-max) {
+      font-size: 12px;
+    }
+  }
+#app {
+    font-family: "Roboto", "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.page-top {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+  
+.router-link-exact-active {
+    & > button {
+        background-color: md-get-palette-color(pink, 200) !important;
+    }
+}

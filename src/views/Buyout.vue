@@ -1,9 +1,12 @@
 <template>
   <div class="buyout">
-    <div class="md-layout md-gutter md-alignment-center-center">
+    <div class="md-layout md-gutter md-alignment-top-center">
       <div class="md-layout-item md-size-80 md-small-size-100">
-        <h1 class="md-display-2 light-type">Kjøp ut andre</h1>
-        <p>Regn ut hvor mye du må betale for å kjøpe ut andre eiere</p>
+        <h1 class="md-headline light-type">Kjøp ut andre eiere</h1>
+        <p>
+          Regn ut hvor mye du må betale for å kjøpe ut andre eiere fra felles
+          bolig.
+        </p>
       </div>
       <div class="user-input md-layout-item md-size-40 md-small-size-100">
         <UserInputForm />

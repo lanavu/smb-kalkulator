@@ -5,16 +5,26 @@
       <span>{{ toLocaleString(userInput.propertyValue) }} kr</span>
     </p>
     <p class="info-row">
-      <span>Du eier</span>
-      <span>{{ toLocaleString(userInput.ownershipShare) }}%</span>
+      <span>Netto boligverdi</span>
+      <span>{{ toLocaleString(netPropertyValue) }} kr</span>
     </p>
     <p class="info-row">
-      <span>Samlet gjeld på boligen</span>
-      <span>{{ toLocaleString(userInput.propertyDept) }} kr</span>
+      <span>Egenkapital i boligen</span>
+      <span>{{ toLocaleString(totalEquity) }} kr</span>
     </p>
     <p class="info-row">
-      <span>Differanse</span>
-      <span>{{ toLocaleString(diff) }} kr</span>
+      <span>Din eierandel av boligen</span>
+      <span>{{ toLocaleString(shareValue) }} kr</span>
+    </p>
+    <p class="info-row">
+      <span>Betaling til annen part</span>
+      <span>{{ toLocaleString(purchaseAmount) }} kr</span>
+    </p>
+    <p class="info-row">
+      <span>Refinansiert beløp</span>
+      <span
+        ><strong>{{ toLocaleString(newLoanAmount) }}</strong> kr</span
+      >
     </p>
   </div>
 </template>
@@ -28,9 +38,28 @@ export default {
     ...mapState({
       userInput: state => state.userInput
     }),
-    // New computed here
-    diff() {
-      return this.userInput.propertyValue - this.userInput.propertyDept;
+    shareValue() {
+      const multiplier = this.userInput.ownershipShare / 100;
+      return (
+        this.netPropertyValue * multiplier - this.userInput.ownPropertyDept
+      );
+    },
+    netPropertyValue() {
+      const netPropertyValue =
+        this.userInput.propertyValue - this.userInput.commonDebt;
+      return netPropertyValue;
+    },
+    totalEquity() {
+      return this.netPropertyValue - this.userInput.propertyDept;
+    },
+    purchaseAmount() {
+      const shareMultiplier = this.userInput.ownershipShare / 100;
+      const partnerDept =
+        this.userInput.propertyDept - this.userInput.ownPropertyDept;
+      return this.netPropertyValue * (1 - shareMultiplier) - partnerDept;
+    },
+    newLoanAmount() {
+      return this.userInput.propertyDept + this.purchaseAmount;
     }
   },
   methods: {

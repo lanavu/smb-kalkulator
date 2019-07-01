@@ -3,7 +3,7 @@
     <div class="page-top">
       <div class="md-layout md-gutter md-alignment-center-center">
         <div class="md-layout-item md-size-80 md-small-size-100">
-          <h1 class="md-display-2 light-type">Boliglånskalkulator</h1>
+          <h1 class="md-display-1 light-type">Boliglånskalkulator</h1>
         </div>
         <div class="menu md-layout-item md-size-80 md-small-size-100">
           <router-link to="/">
@@ -32,7 +32,13 @@
 @import "styles/theme";
 @import "styles/typography";
 @import "~vue-material/dist/theme/engine";
+@import "styles/grid";
 
+body {
+  @media (max-width: $screen-xs-max) {
+    font-size: 12px;
+  }
+}
 #app {
   font-family: "Roboto", "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

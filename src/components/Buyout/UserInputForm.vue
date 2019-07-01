@@ -1,7 +1,7 @@
 <template>
   <div class="user-input-form">
     <md-field>
-      <label for="estimated-value">Boligens verdi</label>
+      <label for="estimated-value">Boligens verdi uten fellesgjeld</label>
       <md-input
         type="number"
         id="estimated-value"
@@ -55,17 +55,6 @@
         name="own-property-dept"
         min="0"
         @input="value => handleNumberInput('ownPropertyDept', value)"
-      />
-      <span class="md-suffix">kr</span>
-    </md-field>
-    <md-field>
-      <label for="purchase-amount">Avtalt kjøpesum for boligen</label>
-      <md-input
-        type="number"
-        id="purchase-amount"
-        name="purchase-amount"
-        min="0"
-        @input="value => handleNumberInput('purchase-amount', value)"
       />
       <span class="md-suffix">kr</span>
     </md-field>

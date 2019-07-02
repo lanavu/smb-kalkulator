@@ -14,6 +14,7 @@ export default new Vuex.Store({
     },
     userInputBuyShare: {
       propertyValue: null,
+      commonDebt: null,
       ownershipShare: null
     },
     userInputSale: {

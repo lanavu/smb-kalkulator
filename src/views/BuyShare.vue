@@ -9,19 +9,24 @@
         </p>
       </div>
       <div class="user-input md-layout-item md-size-40 md-small-size-100">
-        User input form
+        <UserInputForm />
       </div>
       <div class="result md-layout-item md-size-40 md-small-size-100">
-        Calculation module
+        <CalculationModule />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import UserInputForm from "@/components/BuyShare/UserInputForm";
+import CalculationModule from "@/components/BuyShare/CalculationModule";
 export default {
   name: "BuyShare",
-  components: {}
+  components: {
+    UserInputForm,
+    CalculationModule
+  }
 };
 </script>
 

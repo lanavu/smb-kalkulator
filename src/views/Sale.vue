@@ -8,25 +8,24 @@
         </p>
       </div>
       <div class="user-input md-layout-item md-size-40 md-small-size-100">
-        User input form
+        <UserInputForm />
       </div>
       <div class="result md-layout-item md-size-40 md-small-size-100">
-        Calculation module
+        <CalculationModule />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import UserInputForm from "@/components/Sale/UserInputForm";
+import CalculationModule from "@/components/Sale/CalculationModule";
 
 export default {
   name: "Sale",
-  components: {},
-  computed: {
-    ...mapState({
-      userInput: state => state.userInputSale
-    })
+  components: {
+    UserInputForm,
+    CalculationModule
   }
 };
 </script>

@@ -2,11 +2,7 @@
   <div class="input-info">
     <p class="info-row">
       <span>Boligen din koster</span>
-      <span>{{ toLocaleString(userInput.propertyValue) }} kr</span>
-    </p>
-    <p class="info-row">
-      <span>Netto boligverdi</span>
-      <span>{{ toLocaleString(netPropertyValue) }} kr</span>
+      <span>{{ toLocaleString(grossPropertyValue) }} kr</span>
     </p>
     <p class="info-row">
       <span>Egenkapital i boligen</span>
@@ -21,7 +17,7 @@
       <span>{{ toLocaleString(purchaseAmount) }} kr</span>
     </p>
     <p class="info-row">
-      <span>Nytt lånebeløp</span>
+      <span>Nødvendig lånebeløp</span>
       <span
         ><strong>{{ toLocaleString(newLoanAmount) }}</strong> kr</span
       >
@@ -41,25 +37,24 @@ export default {
     shareValue() {
       const multiplier = this.userInput.ownershipShare / 100;
       return (
-        this.netPropertyValue * multiplier - this.userInput.ownPropertyDebt
+        this.userInput.propertyValue * multiplier -
+        this.userInput.ownPropertyDebt
       );
     },
-    netPropertyValue() {
-      const netPropertyValue =
-        this.userInput.propertyValue - this.userInput.commonDebt;
-      return netPropertyValue;
-    },
     totalEquity() {
-      return this.netPropertyValue - this.userInput.propertyDebt;
+      return this.userInput.propertyValue - this.userInput.propertyDebt;
     },
     purchaseAmount() {
       const shareMultiplier = this.userInput.ownershipShare / 100;
       const partnerDebt =
         this.userInput.propertyDebt - this.userInput.ownPropertyDebt;
-      return this.netPropertyValue * (1 - shareMultiplier) - partnerDebt;
+      return this.userInput.propertyValue * (1 - shareMultiplier) - partnerDebt;
     },
     newLoanAmount() {
       return this.userInput.propertyDebt + this.purchaseAmount;
+    },
+    grossPropertyValue() {
+      return this.userInput.propertyValue + this.userInput.commonDebt;
     }
   },
   methods: {

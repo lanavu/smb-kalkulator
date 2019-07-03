@@ -1,7 +1,7 @@
 <template>
   <div class="user-input-form">
     <md-field>
-      <label for="estimated-value">Boligens totalverdi</label>
+      <label for="estimated-value">Boligens verdi</label>
       <md-input
         type="number"
         id="estimated-value"

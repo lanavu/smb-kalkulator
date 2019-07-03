@@ -5,14 +5,6 @@
       <span>{{ toLocaleString(userInput.propertyValue) }} kr</span>
     </p>
     <p class="info-row">
-      <span>Netto boligverdi</span>
-      <span>{{ toLocaleString(netPropertyValue) }} kr</span>
-    </p>
-    <p class="info-row">
-      <span>Ny eiers eierandel</span>
-      <span>{{ newOwnerShare }} %</span>
-    </p>
-    <p class="info-row">
       <span>Ny eier må betale</span>
       <span>{{ toLocaleString(purchaseAmount) }} kr</span>
     </p>
@@ -28,17 +20,10 @@ export default {
     ...mapState({
       userInput: state => state.userInputBuyShare
     }),
-    netPropertyValue() {
-      //TODO: Regn ut nettoverdi av bolig
-      return 0;
-    },
-    newOwnerShare() {
-      //TODO: Regn ut ny eiers andel i prosent
-      return 0;
-    },
     purchaseAmount() {
-      //TODO: Regn ut hvor mye ny eier må betale
-      return 0;
+      const multiplier = this.userInput.ownershipShare / 100;
+      const purchaseAmount = this.userInput.propertyValue * multiplier;
+      return purchaseAmount;
     }
   },
   methods: {

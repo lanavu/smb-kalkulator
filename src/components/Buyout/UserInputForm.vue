@@ -1,7 +1,7 @@
 <template>
   <div class="user-input-form">
     <md-field>
-      <label for="estimated-value">Boligens totalverdi</label>
+      <label for="estimated-value">Boligens verdi</label>
       <md-input
         type="number"
         id="estimated-value"
@@ -50,7 +50,7 @@
       <span class="md-suffix">kr</span>
     </md-field>
     <md-field>
-      <label for="own-property-dept">Boliggjeld er du ansvarlig for</label>
+      <label for="own-property-dept">Boliggjeld som du er ansvarlig for</label>
       <md-input
         type="number"
         id="own-property-dept"

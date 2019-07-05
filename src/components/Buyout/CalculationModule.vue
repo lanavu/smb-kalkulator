@@ -17,7 +17,7 @@
       <span>{{ toLocaleString(purchaseAmount) }} kr</span>
     </p>
     <p class="info-row">
-      <span>Nødvendig lånebeløp</span>
+      <span>Nødvendig kjøpesum</span>
       <span
         ><strong>{{ toLocaleString(newLoanAmount) }}</strong> kr</span
       >

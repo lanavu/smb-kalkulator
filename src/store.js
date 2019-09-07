@@ -19,7 +19,8 @@ export default new Vuex.Store({
     },
     userInputSale: {
       propertyValue: null,
-      ownershipShare: null
+      ownershipShare: null,
+      ownPropertyDebt: null
     }
   },
   mutations: {
